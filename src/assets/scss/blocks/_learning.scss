@@ -1,0 +1,36 @@
+.learning {
+    & .learning_item {
+
+        &:first-child {
+            align-items: flex-end;
+            justify-content: flex-start !important;
+        }
+
+        &:last-child {
+            & .learning_tile {
+                font-weight: 600;
+                font-size: 12px;
+                line-height: 150%;
+                letter-spacing: 0.01em;
+                color: #0a0d50;
+                background: rgba(31, 46, 126, 0.1);
+                border-radius: 36px;
+                padding: 5px 14px;
+                display: block;
+                margin-bottom: 25px;
+            }
+
+            & .project_title{
+                margin-bottom: 20px;
+            }
+
+            & .project_desc_grey{
+                display: block;
+            }
+            & .project_desc_grey + .project_desc_grey{
+                margin-top: 20px;
+            }
+        }
+    }
+
+}

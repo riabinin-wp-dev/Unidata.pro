@@ -1,0 +1,130 @@
+.cases.startup {
+
+    & .container>.flex-row {
+        justify-content: space-between;
+
+        @include small-tablet{
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        @include mobile{
+            align-items: flex-start;
+        }
+    }
+
+    & .project_desc_grey {
+        max-width: 507px;
+    }
+
+    & .grid-row {
+
+        @media (max-width: 1250px) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @include small-tablet{
+            grid-template-columns: 1fr;
+        }
+
+        & li {
+            position: relative;
+            padding-bottom: unset;
+            display: flex;
+            flex-direction: column;
+
+            @media (max-width: 1250px){
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            &:last-child{
+                @media (max-width: 1250px){
+                    grid-column: 2 span;
+                }
+                @include small-tablet{
+                    grid-column: unset;
+                }
+            }
+
+
+        }
+
+        & .startup_figure,
+        & .startup_bg {
+            border-radius: 30px;
+        }
+
+        & .startup_figure {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 0;
+            object-fit: contain;
+            max-width: 351px;
+
+            @media (max-width: 1470px) {
+                max-width: 75%;
+            }
+        }
+
+        & .startup_wrapper {
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            flex-grow: 1;
+            min-height: 227px;
+
+            @include mobile{
+                min-height: unset;
+            }
+        }
+
+        & .img-wrap {
+            margin-bottom: unset;
+            overflow: hidden;
+        }
+
+        & .project_title_h4 {
+            color: #4db4ff;
+            margin-bottom: unset;
+        }
+
+        & .startup_list_item {
+            font-family: var(--font4);
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #fffdfb;
+            padding-bottom: 15px;
+            max-width: 369px;
+            position: relative;
+
+            @include mobile{
+                font-size: 14px;
+                max-width: 80%;
+            }
+
+            & li::before{
+                background-color: #fffdfb;
+                content: '';
+                position: absolute;
+                left: -30px;
+                top: 12px;
+                z-index: 1;
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                overflow: hidden;
+            }
+
+            & li{
+                padding-bottom: unset;
+            }
+        }
+    }
+}

@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>SVG stack preview | svg-sprite</title>
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+                color: #666;
+                background: #fafafa;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 1em;
+                line-height: 1.4;
+            }
+
+            header {
+                display: block;
+                padding: 3em 3em 2em;
+                background-color: #fff;
+            }
+
+            header p {
+                margin: 2em 0 0;
+            }
+
+            section {
+                border-top: 1px solid #eee;
+                padding: 2em 3em 0;
+            }
+
+            section ul {
+                margin: 0;
+                padding: 0;
+            }
+
+            section li {
+                display: inline-block;
+                background-color: #fff;
+                position: relative;
+                margin: 0 2em 2em 0;
+                vertical-align: top;
+                border: 1px solid #ccc;
+                padding: 1em 1em 3em;
+                cursor: default;
+            }
+
+            .icon-box {
+                margin: 0;
+                width: 144px;
+                height: 144px;
+                position: relative;
+                background: #ccc url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Cpath fill='%23fff' d='M6 0h6v6H6zM0 6h6v6H0z'/%3E%3C/svg%3E") top left repeat;
+                border: 1px solid #ccc;
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+            }
+
+            .icon {
+                display: inline-block;
+            }
+
+            h1 {
+                margin-top: 0;
+            }
+
+            h2 {
+                margin: 0;
+                padding: 0;
+                font-size: 1em;
+                font-weight: 400;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                position: absolute;
+                left: 1em;
+                right: 1em;
+                bottom: 1em;
+            }
+
+            footer {
+                display: block;
+                margin: 0;
+                padding: 0 3em 3em;
+            }
+
+            footer p {
+                margin: 0;
+                font-size: .7em;
+            }
+
+            footer a {
+                color: #0f7595;
+                margin-left: 0;
+            }
+        </style>
+
+<!--
+Sprite shape dimensions
+====================================================================================================
+You will need to set the sprite shape dimensions via CSS when you use them as stack SVGs, otherwise
+they would become a huge 100% in size. You may use the following dimension classes for doing so.
+They might well be outsourced to an external stylesheet of course.
+-->
+
+<style>
+ .svg-Datasets_industries--Gradients-dims { width: 658px; height: 658px; }
+ .svg-Datasets_industries--Gradients2-dims { width: 1086px; height: 1086px; }
+ .svg-archive-cases--angle-dims { width: 30px; height: 30px; }
+ .svg-blog--check-dims { width: 18px; height: 18px; }
+ .svg-cases--Down-Right-dims { width: 30px; height: 31px; }
+ .svg-cases--Down-Right2-dims { width: 98px; height: 99px; }
+ .svg-collection-stages--character_analyzes_the_data_schema-dims { width: 80px; height: 80px; }
+ .svg-collection-stages--character_has_no_time_to_process_the_data-dims { width: 80px; height: 80px; }
+ .svg-collection-stages--character_sorts_files_into_folders-dims { width: 80px; height: 80px; }
+ .svg-collection-stages--character_structures_information_and_folders-dims { width: 80px; height: 80px; }
+ .svg-datamarket--FilterOutlined-dims { width: 24px; height: 24px; }
+ .svg-datcases--free-icon-file-and-folder-dims { width: 64px; height: 64px; }
+ .svg-datcases--free-icon-people-dims { width: 64px; height: 64px; }
+ .svg-datcases--free-icon-photo-dims { width: 64px; height: 64px; }
+ .svg-header--Group-dims { width: 48px; height: 48px; }
+ .svg-single--Arrow-Right-Up-dims { width: 25px; height: 25px; }
+ .svg-single--div.btn-circle-wrapper-dims { width: 98px; height: 98px; }
+ .svg-software--next-dims { width: 56px; height: 56px; }
+ .svg-software--prev-dims { width: 56px; height: 56px; }
+ .svg-stages--Line5-dims { width: 98px; height: 294px; }
+ .svg-stages--Line5Hor-dims { width: 198px; height: 77px; }
+ .svg-stages--LineHorisont-dims { width: 294px; height: 98px; }
+ .svg-stages--mask-dims { width: 181px; height: 277px; }
+ .svg-svg--3d-illustration-dims { width: 631px; height: 491px; }
+ .svg-svg--Achievement,_award,_cup,_goblet,_reward,_trophy-dims { width: 64px; height: 64px; }
+ .svg-svg--Airplane,_business,_launch,_marketing,_paper,_paper_airplane-dims { width: 64px; height: 65px; }
+ .svg-svg--Arm_wrestling,_competition,_handshake-dims { width: 64px; height: 64px; }
+ .svg-svg--Arm_wrestling,_competition,_handshake2-dims { width: 64px; height: 64px; }
+ .svg-svg--Audience,_goal,_marketing,_target,_target_audience-dims { width: 64px; height: 64px; }
+ .svg-svg--Blue-arrow-top-dims { width: 24px; height: 24px; }
+ .svg-svg--Brain,_brainstorm,_idea,_mind-dims { width: 64px; height: 64px; }
+ .svg-svg--SearchOutlined-dims { width: 24px; height: 24px; }
+ .svg-svg--Support-dims { width: 64px; height: 64px; }
+ .svg-svg--Twitter_logo-dims { width: 34px; height: 34px; }
+ .svg-svg--Vector-dims { width: 18px; height: 14px; }
+ .svg-svg--VectorGit-dims { width: 34px; height: 34px; }
+ .svg-svg--arrow-left-single-dims { width: 24px; height: 24px; }
+ .svg-svg--arrow-left-types-dims { width: 56px; height: 56px; }
+ .svg-svg--arrow-prev-dims { width: 24px; height: 24px; }
+ .svg-svg--arrow-right-dims { width: 24px; height: 24px; }
+ .svg-svg--arrow-right-black-dims { width: 32px; height: 32px; }
+ .svg-svg--arrow-right-single-dims { width: 24px; height: 24px; }
+ .svg-svg--arrow-right-types-dims { width: 56px; height: 56px; }
+ .svg-svg--dashicons_email-dims { width: 24px; height: 24px; }
+ .svg-svg--dot-dims { width: 8px; height: 8px; }
+ .svg-svg--facebook_logo-dims { width: 34px; height: 34px; }
+ .svg-svg--game,_partners,_puzzle,_solution-dims { width: 64px; height: 64px; }
+ .svg-svg--linkedin_logo-dims { width: 34px; height: 34px; }
+ .svg-svg--phone-dims { width: 24px; height: 24px; }
+ .svg-timeline--startorfinish-dims { width: 84px; height: 84px; }
+ .svg-timeline--startorfinish2-dims { width: 84px; height: 84px; }
+</style>
+
+<!--
+====================================================================================================
+-->
+
+    </head>
+    <body>
+        <header>
+            <h1>SVG stack preview</h1>
+            <p>This preview features an SVG stack. Please have a look at the HTML source for further details and be aware of the following constraints:</p>
+            <ul>
+                <li>Your browser has to <a href="https://caniuse.com/svg-fragment" target="_blank" rel="noopener noreferrer">support SVG fragment identifiers</a> for SVG stacks to work.</li>
+                <li>Support for SVG fragment identifiers hasn't always been that decent. For older browsers you will have to use some prolyfill like <a href="https://github.com/preciousforever/SVG-Stacker/blob/master/fixsvgstack.jquery.js" target="_blank" rel="noopener noreferrer">fixsvgstack.jquery.js</a>.</li>
+            </ul>
+        </header>
+        <section>
+
+<!--
+SVG stack
+====================================================================================================
+These SVG images make use of fragment identifiers (IDs) to reference certain portions of the
+external sprite. By default, all shapes inside the sprite are hidden by CSS. The `:target` pseudo
+selector is used to show the very shape that is referenced by the fragment identifier.
+-->
+
+            <ul>
+
+             <li title="Datasets_industries--Gradients">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#Datasets_industries--Gradients" class="svg-Datasets_industries--Gradients-dims" alt="Datasets_industries--Gradients">
+                    </div>
+                    <h2>Datasets_industries--Gradients, </h2>
+                </li>
+             <li title="Datasets_industries--Gradients2">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#Datasets_industries--Gradients2" class="svg-Datasets_industries--Gradients2-dims" alt="Datasets_industries--Gradients2">
+                    </div>
+                    <h2>Datasets_industries--Gradients2, </h2>
+                </li>
+             <li title="archive-cases--angle">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#archive-cases--angle" class="svg-archive-cases--angle-dims" alt="archive-cases--angle">
+                    </div>
+                    <h2>archive-cases--angle, </h2>
+                </li>
+             <li title="blog--check">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#blog--check" class="svg-blog--check-dims" alt="blog--check">
+                    </div>
+                    <h2>blog--check, </h2>
+                </li>
+             <li title="cases--Down-Right">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#cases--Down-Right" class="svg-cases--Down-Right-dims" alt="cases--Down-Right">
+                    </div>
+                    <h2>cases--Down-Right, </h2>
+                </li>
+             <li title="cases--Down-Right2">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#cases--Down-Right2" class="svg-cases--Down-Right2-dims" alt="cases--Down-Right2">
+                    </div>
+                    <h2>cases--Down-Right2, </h2>
+                </li>
+             <li title="collection-stages--character_analyzes_the_data_schema">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#collection-stages--character_analyzes_the_data_schema" class="svg-collection-stages--character_analyzes_the_data_schema-dims" alt="collection-stages--character_analyzes_the_data_schema">
+                    </div>
+                    <h2>collection-stages--character_analyzes_the_data_schema, </h2>
+                </li>
+             <li title="collection-stages--character_has_no_time_to_process_the_data">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#collection-stages--character_has_no_time_to_process_the_data" class="svg-collection-stages--character_has_no_time_to_process_the_data-dims" alt="collection-stages--character_has_no_time_to_process_the_data">
+                    </div>
+                    <h2>collection-stages--character_has_no_time_to_process_the_data, </h2>
+                </li>
+             <li title="collection-stages--character_sorts_files_into_folders">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#collection-stages--character_sorts_files_into_folders" class="svg-collection-stages--character_sorts_files_into_folders-dims" alt="collection-stages--character_sorts_files_into_folders">
+                    </div>
+                    <h2>collection-stages--character_sorts_files_into_folders, </h2>
+                </li>
+             <li title="collection-stages--character_structures_information_and_folders">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#collection-stages--character_structures_information_and_folders" class="svg-collection-stages--character_structures_information_and_folders-dims" alt="collection-stages--character_structures_information_and_folders">
+                    </div>
+                    <h2>collection-stages--character_structures_information_and_folders, </h2>
+                </li>
+             <li title="datamarket--FilterOutlined">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#datamarket--FilterOutlined" class="svg-datamarket--FilterOutlined-dims" alt="datamarket--FilterOutlined">
+                    </div>
+                    <h2>datamarket--FilterOutlined, </h2>
+                </li>
+             <li title="datcases--free-icon-file-and-folder">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#datcases--free-icon-file-and-folder" class="svg-datcases--free-icon-file-and-folder-dims" alt="datcases--free-icon-file-and-folder">
+                    </div>
+                    <h2>datcases--free-icon-file-and-folder, </h2>
+                </li>
+             <li title="datcases--free-icon-people">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#datcases--free-icon-people" class="svg-datcases--free-icon-people-dims" alt="datcases--free-icon-people">
+                    </div>
+                    <h2>datcases--free-icon-people, </h2>
+                </li>
+             <li title="datcases--free-icon-photo">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#datcases--free-icon-photo" class="svg-datcases--free-icon-photo-dims" alt="datcases--free-icon-photo">
+                    </div>
+                    <h2>datcases--free-icon-photo, </h2>
+                </li>
+             <li title="header--Group">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#header--Group" class="svg-header--Group-dims" alt="header--Group">
+                    </div>
+                    <h2>header--Group, </h2>
+                </li>
+             <li title="single--Arrow-Right-Up">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#single--Arrow-Right-Up" class="svg-single--Arrow-Right-Up-dims" alt="single--Arrow-Right-Up">
+                    </div>
+                    <h2>single--Arrow-Right-Up, </h2>
+                </li>
+             <li title="single--div.btn-circle-wrapper">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#single--div.btn-circle-wrapper" class="svg-single--div.btn-circle-wrapper-dims" alt="single--div.btn-circle-wrapper">
+                    </div>
+                    <h2>single--div.btn-circle-wrapper, </h2>
+                </li>
+             <li title="software--next">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#software--next" class="svg-software--next-dims" alt="software--next">
+                    </div>
+                    <h2>software--next, </h2>
+                </li>
+             <li title="software--prev">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#software--prev" class="svg-software--prev-dims" alt="software--prev">
+                    </div>
+                    <h2>software--prev, </h2>
+                </li>
+             <li title="stages--Line5">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#stages--Line5" class="svg-stages--Line5-dims" alt="stages--Line5">
+                    </div>
+                    <h2>stages--Line5, </h2>
+                </li>
+             <li title="stages--Line5Hor">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#stages--Line5Hor" class="svg-stages--Line5Hor-dims" alt="stages--Line5Hor">
+                    </div>
+                    <h2>stages--Line5Hor, </h2>
+                </li>
+             <li title="stages--LineHorisont">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#stages--LineHorisont" class="svg-stages--LineHorisont-dims" alt="stages--LineHorisont">
+                    </div>
+                    <h2>stages--LineHorisont, </h2>
+                </li>
+             <li title="stages--mask">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#stages--mask" class="svg-stages--mask-dims" alt="stages--mask">
+                    </div>
+                    <h2>stages--mask, </h2>
+                </li>
+             <li title="svg--3d-illustration">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#svg--3d-illustration" class="svg-svg--3d-illustration-dims" alt="svg--3d-illustration">
+                    </div>
+                    <h2>svg--3d-illustration, </h2>
+                </li>
+             <li title="svg--Achievement,_award,_cup,_goblet,_reward,_trophy">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#svg--Achievement,_award,_cup,_goblet,_reward,_trophy" class="svg-svg--Achievement,_award,_cup,_goblet,_reward,_trophy-dims" alt="svg--Achievement,_award,_cup,_goblet,_reward,_trophy">
+                    </div>
+                    <h2>svg--Achievement,_award,_cup,_goblet,_reward,_trophy, </h2>
+                </li>
+             <li title="svg--Airplane,_business,_launch,_marketing,_paper,_paper_airplane">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#svg--Airplane,_business,_launch,_marketing,_paper,_paper_airplane" class="svg-svg--Airplane,_business,_launch,_marketing,_paper,_paper_airplane-dims" alt="svg--Airplane,_business,_launch,_marketing,_paper,_paper_airplane">
+                    </div>
+                    <h2>svg--Airplane,_business,_launch,_marketing,_paper,_paper_airplane, </h2>
+                </li>
+             <li title="svg--Arm_wrestling,_competition,_handshake">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#svg--Arm_wrestling,_competition,_handshake" class="svg-svg--Arm_wrestling,_competition,_handshake-dims" alt="svg--Arm_wrestling,_competition,_handshake">
+                    </div>
+                    <h2>svg--Arm_wrestling,_competition,_handshake, </h2>
+                </li>
+             <li title="svg--Arm_wrestling,_competition,_handshake2">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#svg--Arm_wrestling,_competition,_handshake2" class="svg-svg--Arm_wrestling,_competition,_handshake2-dims" alt="svg--Arm_wrestling,_competition,_handshake2">
+                    </div>
+                    <h2>svg--Arm_wrestling,_competition,_handshake2, </h2>
+                </li>
+             <li title="svg--Audience,_goal,_marketing,_target,_target_audience">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#svg--Audience,_goal,_marketing,_target,_target_audience" class="svg-svg--Audience,_goal,_marketing,_target,_target_audience-dims" alt="svg--Audience,_goal,_marketing,_target,_target_audience">
+                    </div>
+                    <h2>svg--Audience,_goal,_marketing,_target,_target_audience, </h2>
+                </li>
+             <li title="svg--Blue-arrow-top">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#svg--Blue-arrow-top" class="svg-svg--Blue-arrow-top-dims" alt="svg--Blue-arrow-top">
+                    </div>
+                    <h2>svg--Blue-arrow-top, </h2>
+                </li>
+             <li title="svg--Brain,_brainstorm,_idea,_mind">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#svg--Brain,_brainstorm,_idea,_mind" class="svg-svg--Brain,_brainstorm,_idea,_mind-dims" alt="svg--Brain,_brainstorm,_idea,_mind">
+                    </div>
+                    <h2>svg--Brain,_brainstorm,_idea,_mind, </h2>
+                </li>
+             <li title="svg--SearchOutlined">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#svg--SearchOutlined" class="svg-svg--SearchOutlined-dims" alt="svg--SearchOutlined">
+                    </div>
+                    <h2>svg--SearchOutlined, </h2>
+                </li>
+             <li title="svg--Support">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#svg--Support" class="svg-svg--Support-dims" alt="svg--Support">
+                    </div>
+                    <h2>svg--Support, </h2>
+                </li>
+             <li title="svg--Twitter_logo">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#svg--Twitter_logo" class="svg-svg--Twitter_logo-dims" alt="svg--Twitter_logo">
+                    </div>
+                    <h2>svg--Twitter_logo, </h2>
+                </li>
+             <li title="svg--Vector">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#svg--Vector" class="svg-svg--Vector-dims" alt="svg--Vector">
+                    </div>
+                    <h2>svg--Vector, </h2>
+                </li>
+             <li title="svg--VectorGit">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#svg--VectorGit" class="svg-svg--VectorGit-dims" alt="svg--VectorGit">
+                    </div>
+                    <h2>svg--VectorGit, </h2>
+                </li>
+             <li title="svg--arrow-left-single">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#svg--arrow-left-single" class="svg-svg--arrow-left-single-dims" alt="svg--arrow-left-single">
+                    </div>
+                    <h2>svg--arrow-left-single, </h2>
+                </li>
+             <li title="svg--arrow-left-types">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#svg--arrow-left-types" class="svg-svg--arrow-left-types-dims" alt="svg--arrow-left-types">
+                    </div>
+                    <h2>svg--arrow-left-types, </h2>
+                </li>
+             <li title="svg--arrow-prev">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#svg--arrow-prev" class="svg-svg--arrow-prev-dims" alt="svg--arrow-prev">
+                    </div>
+                    <h2>svg--arrow-prev, </h2>
+                </li>
+             <li title="svg--arrow-right">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#svg--arrow-right" class="svg-svg--arrow-right-dims" alt="svg--arrow-right">
+                    </div>
+                    <h2>svg--arrow-right, </h2>
+                </li>
+             <li title="svg--arrow-right-black">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#svg--arrow-right-black" class="svg-svg--arrow-right-black-dims" alt="svg--arrow-right-black">
+                    </div>
+                    <h2>svg--arrow-right-black, </h2>
+                </li>
+             <li title="svg--arrow-right-single">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#svg--arrow-right-single" class="svg-svg--arrow-right-single-dims" alt="svg--arrow-right-single">
+                    </div>
+                    <h2>svg--arrow-right-single, </h2>
+                </li>
+             <li title="svg--arrow-right-types">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#svg--arrow-right-types" class="svg-svg--arrow-right-types-dims" alt="svg--arrow-right-types">
+                    </div>
+                    <h2>svg--arrow-right-types, </h2>
+                </li>
+             <li title="svg--dashicons_email">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#svg--dashicons_email" class="svg-svg--dashicons_email-dims" alt="svg--dashicons_email">
+                    </div>
+                    <h2>svg--dashicons_email, </h2>
+                </li>
+             <li title="svg--dot">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#svg--dot" class="svg-svg--dot-dims" alt="svg--dot">
+                    </div>
+                    <h2>svg--dot, </h2>
+                </li>
+             <li title="svg--facebook_logo">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#svg--facebook_logo" class="svg-svg--facebook_logo-dims" alt="svg--facebook_logo">
+                    </div>
+                    <h2>svg--facebook_logo, </h2>
+                </li>
+             <li title="svg--game,_partners,_puzzle,_solution">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#svg--game,_partners,_puzzle,_solution" class="svg-svg--game,_partners,_puzzle,_solution-dims" alt="svg--game,_partners,_puzzle,_solution">
+                    </div>
+                    <h2>svg--game,_partners,_puzzle,_solution, </h2>
+                </li>
+             <li title="svg--linkedin_logo">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#svg--linkedin_logo" class="svg-svg--linkedin_logo-dims" alt="svg--linkedin_logo">
+                    </div>
+                    <h2>svg--linkedin_logo, </h2>
+                </li>
+             <li title="svg--phone">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#svg--phone" class="svg-svg--phone-dims" alt="svg--phone">
+                    </div>
+                    <h2>svg--phone, </h2>
+                </li>
+             <li title="timeline--startorfinish">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#timeline--startorfinish" class="svg-timeline--startorfinish-dims" alt="timeline--startorfinish">
+                    </div>
+                    <h2>timeline--startorfinish, </h2>
+                </li>
+             <li title="timeline--startorfinish2">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#timeline--startorfinish2" class="svg-timeline--startorfinish2-dims" alt="timeline--startorfinish2">
+                    </div>
+                    <h2>timeline--startorfinish2, </h2>
+                </li>
+         </ul>
+
+<!--
+====================================================================================================
+-->
+
+        </section>
+        <footer>
+            <p>Generated at Tue, 28 Jan 2025 15:43:53 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
+        </footer>
+    </body>
+</html>

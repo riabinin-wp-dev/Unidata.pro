@@ -1,0 +1,65 @@
+.sinhero {
+    background: rgba(10, 13, 80, 0.9);
+    border-radius: 16px 16px 0 0;
+    padding-top: 40px;
+    padding-bottom: 50px;
+
+    &.section{
+        margin-bottom: 0;
+    }
+
+    & .sinhero_inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 1060px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    & .project_title {
+        text-align: center;
+        color: #fff;
+    }
+
+    & time {
+        display: block;
+        font-family: var(--font5);
+        font-weight: 500;
+        font-size: 12px;
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+        text-align: center;
+        color: #fff;
+        margin-top: 26px;
+    }
+
+    & .sinhero_inner_cat {
+        margin-top: 60px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        @include tablet{
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        & li {
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 11px;
+            background: rgba(240, 240, 240, 0.2);
+            opacity: 0.5;
+
+            & a {
+                padding: 8px 24px;
+                display: block;
+                font-weight: 400;
+                font-size: 14px;
+                text-align: center;
+                color: #fff;
+            }
+        }
+    }
+}

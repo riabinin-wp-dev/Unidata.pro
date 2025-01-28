@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    {{> head }}
+</head>
+
+<body>
+    <!-- <object type="image/svg+xml" data="./assets/images/sprite.svg" style="display: none;"></object> -->
+
+    <div class="page" style="background-image: url(./assets/images/Background.webp);">
+        {{> header }}
+
+        <main class="main">
+            {{> body }}
+        </main>
+        {{> footer }}
+        <div class="overlay"></div>
+    </div>
+    <!-- <script src="assets/js/app.js"></script> -->
+    <script>
+        // const swiper = new Swiper('.swiper-services', {
+        //     slidesPerView: 3,
+        //     spaceBetween: 18,
+        //     navigation: {
+        //         nextEl: '.swiper-button-next',
+        //         prevEl: '.swiper-button-prev',
+        //     },
+        //     breakpoints: {
+        //         200: {
+        //             slidesPerView: 1,
+        //             spaceBetween: 18
+        //         },
+        //         650: {
+        //             slidesPerView: 2,
+        //             spaceBetween: 18
+        //         },
+        //         1050: {
+        //             slidesPerView: 3,
+        //             spaceBetween: 18
+        //         }
+        //     }
+        // });
+        // const swiperBlockquote = new Swiper('.swiper-blockquote', {
+        //     slidesPerView: 1,
+        //     spaceBetween: 15,
+        //     navigation: {
+        //         nextEl: '.swiper-button-next',
+        //         prevEl: '.swiper-button-prev',
+        //     },
+        //     pagination: {
+        //         el: '.swiper-pagination',
+        //         type: 'fraction',
+        //         formatFractionCurrent: (number) => `0${number}`, // Формат текущего слайда с ведущим нулем
+        //         formatFractionTotal: (number) => `0${number}`, // Формат общего количества слайдов с ведущим нулем
+        //     },
+        // });
+        document.addEventListener('DOMContentLoaded', () => {
+            const burgerMenu = document.querySelector('.burger-menu');
+            const mobileMenu = document.querySelector('.mobile_menu');
+            if(burgerMenu && mobileMenu){
+                burgerMenu.addEventListener('click', () => {
+                    burgerMenu.classList.toggle('open');
+                   mobileMenu.classList.toggle('active'); 
+                });
+            }
+
+        });
+
+    </script>
+</body>
+
+</html>

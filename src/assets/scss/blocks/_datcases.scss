@@ -1,0 +1,201 @@
+.datcases {
+    & .flex-row {
+
+        &:first-of-type {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid rgba(10, 13, 80, 0.6);
+            flex-wrap: wrap;
+
+            @include tablet {
+                padding-bottom: 25px;
+            }
+
+            & .project_desc_grey {
+                max-width: 557px;
+            }
+
+        }
+
+        &:nth-of-type(2) {
+            padding: 40px 0 50px;
+            justify-content: space-between;
+            gap: 50px;
+
+            @media (max-width:1500px) {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            @media (max-width:1200px) {
+                padding: 30px 0;
+                gap: 30px;
+            }
+
+            @include tablet {
+                gap: 20px;
+            }
+
+
+            & dl {
+                display: flex;
+                align-items: center;
+                gap: 40px;
+
+                @media (max-width:1500px) {
+                    flex: 1 0 calc(50% - 50px);
+                    justify-content: center;
+                }
+
+                @media (max-width:1200px) {
+                    flex: 1 0 100%;
+                    justify-content: flex-start;
+                }
+
+                @include tablet {
+                    gap: 20px;
+                }
+
+
+                &:nth-child(1),
+                &:nth-child(3) {
+                    width: 100%;
+                    max-width: 400px;
+
+                    @media (max-width:1500px) {
+                        max-width: none;
+                    }
+                }
+
+                &:nth-child(2) {
+                    width: 100%;
+                    max-width: 562px;
+
+                    @media (max-width:1500px) {
+                        max-width: none;
+                    }
+                }
+
+                & dt {
+                    flex-shrink: 0;
+
+                    & img {
+                        @include tablet {
+                            max-width: 40px !important;
+                        }
+                    }
+                }
+
+                & dt img {
+                    max-width: 64px;
+
+                }
+            }
+
+            & dd {
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 150%;
+                color: rgba(10, 13, 80, 0.9);
+
+                @include tablet {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        &:nth-of-type(3) {
+            padding: 40px;
+            padding-bottom: 0px;
+
+            @include small-tablet {
+                padding: 0;
+            }
+        }
+    }
+
+    & .swiper_cases {
+        padding-bottom: 60px;
+
+        & .swiper-slide {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            background-color: #fff;
+
+            & .img-wrap {
+                // border-radius: 15px;
+
+                & img {
+                    border-radius: 15px;
+                    border: 0.95px solid #0a0d50;
+                }
+            }
+
+            & dl {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+
+                & * {
+                    text-align: center;
+                }
+
+                & dt {
+                    font-weight: 400;
+                    font-size: 18px;
+                    text-align: center;
+                    color: #172224;
+
+                    & b {
+                        font-weight: 700;
+                    }
+                }
+
+                & dd {
+                    font-weight: 700;
+                    font-size: 18px;
+                    text-align: center;
+                    color: #0a0d50;
+                }
+            }
+        }
+    }
+
+    & .project-modal {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+    }
+}
+
+.datcases_images {
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.datacase_item {
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.05);
+    background: #fff;
+
+    & .img-wrap img {
+        max-width: 510px;
+        max-height: 300px;
+        width: 100%;
+    }
+}
+
+.datacase_item_desc {
+    display: block;
+    font-family: var(--third-family);
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 117%;
+    color: #0a0d50;
+    padding: 32px;
+}

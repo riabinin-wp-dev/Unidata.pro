@@ -1,0 +1,51 @@
+.team {
+    & .project_title {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    & .grid-row {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 40px;
+
+        @include tablet{
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+    }
+
+    & .team_item {
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+        max-width: 320px;
+
+        @include small-tablet{
+            gap: 12px;
+        }
+        @include mobile{
+            gap: 0;
+        }
+    }
+
+    & .team_item_title {
+        margin: 0;
+        font-weight: 600;
+        font-size: 26px;
+        line-height: 150%;
+        letter-spacing: -0.03em;
+        text-align: center;
+        color: #0a0d50;
+
+        @include small-tablet{
+            font-size: 20px;
+        }
+    }
+
+    & .project_desc_grey{
+        text-align: center;
+    }
+}

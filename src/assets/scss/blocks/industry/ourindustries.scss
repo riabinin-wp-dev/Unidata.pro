@@ -1,0 +1,129 @@
+.ourindustries {
+
+    & .project_title{
+        margin-bottom: clamp(30px, 5vw ,60px);
+    }
+    & .grid-row {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 35px;
+        
+        @include mobile{
+            grid-template-columns: 1fr;
+        }
+    }
+
+    & .ourindustries_item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    & .img-wrap {
+        position: relative;
+        margin-bottom: 28px;
+
+        & .mask {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+            width: 98px;
+            height: 98px;
+            object-fit: contain;
+
+            @include mobile{
+                width: 68px;
+                height: 68px;
+            }
+        }
+
+        & .ourindustries_counter {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+            background-color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: clamp(20px, 3vw, 24px);
+            text-align: center;
+            color: #fff;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+
+            @include mobile{
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+
+    & .project_title_h4 {
+        margin-bottom: 20px;
+    }
+
+    & p {
+        margin: 0;
+    }
+
+    & .content-wrap {
+        flex-grow: 1;
+        margin-bottom: 40px;
+
+        @include mobile{
+            margin-bottom: 20px;
+        }
+        
+        & ul {
+            list-style: disc;
+            padding-left: 25px;
+    
+            & li {
+                font-weight: 400;
+                font-size: clamp(14px, 3vw,18px);
+                line-height: 160%;
+                color: #595856;
+            }
+        }
+    }
+
+
+    & .project_link {
+        border: 2px solid var(--accent-color);
+        border-radius: 70px;
+        padding: 16px 32px;
+        max-width: 200px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: clamp(14px, 3vw ,16px);
+        line-height: 140%;
+        letter-spacing: -0.02em;
+        color: #0a0d50;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all 0.3s linear;
+        
+        @include mobile{
+            padding: 12px 20px;
+        }
+        
+        & path{
+            transition: all 0.3s linear;
+        }
+
+        &:hover{
+            background-color: var(--accent-color);
+            color: white;
+
+            & path{
+                stroke: white;
+            }
+        }
+    }
+}

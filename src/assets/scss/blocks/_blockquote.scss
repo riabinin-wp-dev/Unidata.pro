@@ -1,0 +1,92 @@
+.blockquote {
+    background-color: #fff;
+    
+    & .blockquote_inner_text {
+        font-weight: 600;
+        font-size: clamp(24px, 3.3vw, 36px);
+        line-height: 160%;
+        letter-spacing: -0.03em;
+        color: #010205;
+        display: block;
+        margin-bottom: 70px;
+
+        @include small-tablet{
+            margin-bottom: 40px;
+        }
+    }
+
+    & .swiper-blockquote {
+        padding-bottom: 0;
+
+        @include tablet{
+            padding-bottom: 60px;
+        }
+
+        & .swiper-slide {
+            padding: 0;
+            overflow: visible;
+            border-radius: 0;
+        }
+
+        & .grid-row {
+            grid-template-columns: 70px 1fr;
+            column-gap: 20px;
+            align-items: center;
+        }
+
+        & .img-wrap {
+            grid-row: 2 span;
+        }
+
+        & .blockquote_inner_job {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 180%;
+            color: #878c91;
+        }
+
+        & .blockquote_inner_name {
+            font-family: var(--font4);
+            font-weight: 500;
+            font-size: clamp(20px, 4vw, 24px);
+            line-height: 133%;
+            letter-spacing: -0.02em;
+            color: #222324;
+        }
+
+        & .swiper-pagination-current ,& .swiper-pagination-total {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 180%;
+            text-decoration: underline;
+            text-decoration-skip-ink: none;
+            color: #0a0d50;
+        }
+
+        & .swiper-pagination-total{
+            color: rgba(1, 2, 5, 0.4);
+        }
+
+        & .swiper-pagination{
+            max-width: max-content;
+            margin-left: auto;
+            margin-right: 130px;
+            left: unset;
+            right: 0;
+            bottom: 15px;
+
+            @include tablet{
+             margin-right: 100px;
+             bottom: 8px;
+            }
+        }
+
+        & .swiper-button-prev {
+             right: 211px;
+
+            @include tablet{
+                right: 185px;
+            }
+        }
+    }
+}

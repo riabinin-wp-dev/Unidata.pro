@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    {{> head }}
+</head>
+
+<body>
+    <!-- <object type="image/svg+xml" data="./assets/images/sprite.svg" style="display: none;"></object> -->
+
+    <div class="page">
+        {{> header }}
+
+        <main class="main">
+            {{> body }}
+        </main>
+        {{> footer }}
+        <div class="overlay"></div>
+    </div>
+    <!-- <script src="assets/js/app.js"></script> -->
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const burgerMenu = document.querySelector('.burger-menu');
+            const mobileMenu = document.querySelector('.mobile_menu');
+            if (burgerMenu && mobileMenu) {
+                burgerMenu.addEventListener('click', () => {
+                    burgerMenu.classList.toggle('open');
+                    mobileMenu.classList.toggle('active');
+                });
+            }
+
+        });
+
+        const swiper = new Swiper('.swiper_types', {
+            slidesPerView: 3,
+            spaceBetween: 34,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: 'true',
+            },
+            breakpoints: {
+                200: {
+                    slidesPerView: 1,
+                    spaceBetween: 34
+                },
+                850: {
+                    slidesPerView: 2,
+                    spaceBetween: 34
+                },
+                1300: {
+                    slidesPerView: 3,
+                    spaceBetween: 34
+                }
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

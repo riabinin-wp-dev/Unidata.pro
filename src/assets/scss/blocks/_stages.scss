@@ -1,0 +1,50 @@
+.collectionStages {
+    & .project_title {
+        margin-bottom: clamp(30px, 4vw, 60px);
+    }
+
+    & .grid-row {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 11px;
+    }
+
+    & .img-wrap {
+        width: 80px;
+        height: 80px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+
+        & img {
+            max-width: 80px;
+            max-height: 80px;
+        }
+    }
+
+    & .stages_item {
+        padding: 50px 25px 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        border-radius: 18px;
+        background: rgba(122, 122, 251, 0.03);
+        border: 1px solid rgba(34, 35, 36, 0.1);
+
+        & .project_title_h4 {
+            color: #222324;
+            font-weight: 600;
+            text-align: center;
+            display: block;
+        }
+
+        & p {
+            margin: 0;
+            text-align: center;
+            font-weight: 400;
+            font-size: clamp(14px, 3vw, 18px);
+            line-height: 167%;
+            text-align: center;
+            color: rgba(1, 1, 1, 0.75);
+        }
+    }
+}

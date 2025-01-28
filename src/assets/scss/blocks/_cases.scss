@@ -1,0 +1,93 @@
+.cases {
+    & .grid-row {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 18px;
+        margin: 50px 0;
+
+        @include mobile{
+            margin: 25px 0;
+        }
+
+        & li {
+            padding-bottom: 20px;
+
+            & .img-wrap {
+                position: relative;
+                margin-bottom: 30px;
+
+                @include mobile{
+                    margin-bottom: 15px;
+                }
+
+                &:after {
+                    position: absolute;
+                    bottom: 65px;
+                    right: 0;
+                    z-index: 1;
+                    content: '';
+                    width: 45px;
+                    height: 45px;
+                    background-image: url(../images/cases/Down-Right.svg);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+
+                &:before {
+                    position: absolute;
+                    bottom: 0;
+                    right: 65px;
+                    z-index: 1;
+                    content: '';
+                    width: 45px;
+                    height: 45px;
+                    background-image: url(../images/cases/Down-Right.svg);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+
+                & .cases_ring {
+                    width: 68px;
+                    height: 68px;
+                    background-color: #fff;
+                    border-radius: 50% 0 0 0;
+                    position: absolute;
+                    bottom: 0px;
+                    right: 0px;
+                    z-index: 1;
+                }
+
+                & span {
+                    width: 56px;
+                    height: 56px;
+                    border-radius: 50%;
+                    background-color: var(--accent-color);
+                    position: absolute;
+                    bottom: 5px;
+                    right: 5px;
+                    z-index: 2;
+                    font-weight: 600;
+                    font-size: 24px;
+                    color: #fff;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+            }
+
+            & .project_title_h4{
+                margin-bottom: 20px;
+
+                @include mobile{
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+
+    & .project-modal {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+}

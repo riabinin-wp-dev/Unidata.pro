@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    {{> head }}
+</head>
+
+<body>
+    <!-- <object type="image/svg+xml" data="./assets/images/sprite.svg" style="display: none;"></object> -->
+
+    <div class="page">
+        {{> header }}
+
+        <main class="main">
+            {{> body }}
+        </main>
+        {{> footer }}
+        <div class="overlay"></div>
+    </div>
+    <!-- <script src="assets/js/app.js"></script> -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const burgerMenu = document.querySelector('.burger-menu');
+            burgerMenu.addEventListener('click', () => {
+                burgerMenu.classList.toggle('open');
+            });
+        });
+        const swiper = new Swiper('.swiper_type', {
+            slidesPerView: 3,
+            spaceBetween: 34,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: 'true',
+            },
+            breakpoints: {
+                200: {
+                    slidesPerView: 1,
+                    spaceBetween: 34
+                },
+                850: {
+                    slidesPerView: 2,
+                    spaceBetween: 34
+                },
+                1300: {
+                    slidesPerView: 3,
+                    spaceBetween: 34
+                }
+            }
+        });
+        const swiperSoftware = new Swiper('.swiper_software', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: 'true',
+            },
+        });
+        const swiperDelivery = new Swiper('.swiper_deliver', {
+            slidesPerView: 2,
+            spaceBetween: 55,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: 'true',
+            },
+            breakpoints: {
+                200: {
+                    slidesPerView: 1,
+                    spaceBetween: 40
+                },
+                900: {
+                    slidesPerView: 2,
+                    spaceBetween: 55
+                }
+            }
+        });
+        const swiperSuccesfull = new Swiper('.swiper-succesfull', {
+            slidesPerView: 3,
+            spaceBetween: 24,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: 'true',
+            },
+            breakpoints: {
+                200: {
+                    slidesPerView: 1,
+                    spaceBetween: 24
+                },
+                650: {
+                    slidesPerView: 2,
+                    spaceBetween: 24
+                },
+                1050: {
+                    slidesPerView: 3,
+                    spaceBetween: 24
+                }
+            }
+        });
+
+    </script>
+</body>
+
+</html>

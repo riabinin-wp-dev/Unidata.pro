@@ -1,0 +1,64 @@
+.industry {
+
+    & .img-wrap.--mobile {
+        display: none;
+
+        @include tablet{
+            display: block;
+            margin-bottom: 30px;
+        }
+    }
+
+    & .grid-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: clamp(40px, 7vw, 124px);
+
+        @include tablet{
+            grid-template-columns: 1fr;
+        }
+    }
+
+    & p {
+        margin: 0;
+        font-weight: 400;
+        font-size: clamp(14px,3vw ,18px);
+        line-height: 180%;
+        color: #595856;
+        margin-bottom: clamp(30px,3vw,48px);
+    }
+
+    & .project-modal{
+        max-width: max-content;
+        
+        & path{
+            transition: all 0.3s linear;
+        }
+
+        &:hover{
+            & path{
+                stroke: var(--accent-color);
+            }
+        }
+    }
+
+    & .industry_item:first-child{
+        display: flex;
+        flex-direction: column;
+
+        @include tablet{
+            max-width: 600px;
+        }
+    }
+
+    & .industry_item:last-child{
+        @include tablet{
+            display: none;
+        }
+    }
+
+    & .industry_item_wrapper{
+        flex-grow: 1;
+        display: flex;
+        align-items: flex-end;
+    }
+}

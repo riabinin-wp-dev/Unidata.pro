@@ -1,0 +1,186 @@
+.intro {
+    & .grid-row {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 34px;
+
+        @include tablet{
+            grid-template-columns: 1fr;
+        }
+    }
+
+    & a{
+        color: #0a0d50;
+    }
+
+    & .intro_item {
+        &:first-child {
+            grid-column: 2 span;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            @include tablet{
+                grid-column: unset;
+            }
+
+            & .img-wrap {
+                // background: radial-gradient(50% 50% at 50% 50%, rgb(10, 13, 80) 0%, rgb(10, 13, 80) 100%);
+                border-radius: 16px;
+
+                & img {
+                    border-radius: 16px;
+                }
+            }
+        }
+    }
+
+    & .project_main_title {
+        margin-bottom: clamp(30px, 4vw ,62px);
+    }
+
+    .intro_tile {
+        font-weight: 500;
+        font-size: 12px;
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+        color: #0a0d50;
+    }
+
+    & .project_title {
+        font-size: clamp(22px, 4vw, 32px);
+        max-width: 582px;
+    }
+
+    & .project_desc_grey {
+        max-width: 582px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        /* Количество строк */
+        overflow: hidden;
+        position: relative;
+        line-height: 1.5em;
+        /* Высота строки */
+        max-height: calc(1.5em * 4);
+        /* Высота строки * количество строк */
+
+        &::after {
+            content: '...';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: #fff;
+            padding-left: 1px;
+        }
+    }
+
+    & time {
+        font-family: var(--font6);
+        font-weight: 500;
+        font-size: 12px;
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+        color: #000;
+    }
+
+    & .project_title_h4 {
+        color: #fff;
+    }
+
+    & .intro_item_subscribe {
+        padding: 32px;
+        @include bg-cover;
+        border-radius: 10px;
+    }
+
+    & label {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        font-weight: 500;
+        font-size: 14px;
+        letter-spacing: -0.05em;
+        color: #fff;
+        margin-top: 20px;
+        flex-grow: 1;
+    }
+
+    & form {
+
+        & .form_wrapper{
+            display: flex;
+            gap: 8px;
+            align-items: flex-end;
+
+            @media (max-width: 500px){
+                flex-direction: column;
+
+                & label{
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    & .intro_item_submit {
+        background: #070707;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        padding: 10px 24px;
+        max-height: 37px;
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: -0.05em;
+        text-align: center;
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.3s linear;
+        border: 1px solid transparent;
+        &:hover{
+            color: #000;
+            background-color: #fff;
+            border-color: #000;
+        }
+
+        @media (max-width: 500px){
+            width: 100%;
+        }
+    }
+
+    & .intro_item_input {
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: -0.05em;
+        text-align: center;
+        color: #000;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        padding: 10px 12px 10px 16px;
+        max-height: 37px;
+        text-align: left;
+        width: 1;
+
+        &:hover,
+        &:active {
+            outline: none;
+        }
+    }
+
+    & .intro_item_desc {
+        display: flex;
+        align-items: center;
+        margin-top: 18px;
+        gap: 10px;
+        font-family: var(--font6);
+        font-weight: 400;
+        font-size: 14px;
+        letter-spacing: -0.05em;
+        color: #fff;
+        opacity: 0.7;
+
+        & img {
+            width: 18px;
+            height: 18px;
+        }
+    }
+}

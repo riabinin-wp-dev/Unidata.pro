@@ -1,0 +1,114 @@
+.insights {
+    & .swiper_container {
+        padding: 0 130px;
+        position: relative;
+
+        @include for-desktop{
+            padding: 0;
+        }
+        
+        & .swiper-button-next:after, 
+        & .swiper-button-prev:after{
+            display: none;
+        }
+        & .swiper-button-next, 
+        & .swiper-button-prev{
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #0a0d50;
+            border-radius: 50%;
+            
+            @include for-desktop{
+                display: none;
+            }
+            
+            & svg{
+               width: 24px;
+               height: 24px;
+            }
+        }
+    }
+
+    & .project_title {
+        text-align: center;
+    }
+
+    & .swiper_insights {
+        padding: 40px 0;
+
+        & .swiper-pagination{
+            display: none;
+
+            @include for-desktop{
+                display: block;
+            }
+
+            & .swiper-pagination-bullet{
+                width: 12px;
+                height: 12px;
+            }
+
+            & .swiper-pagination-bullet-active{
+                background-color: var(--accent-color);
+                width: 15px;
+                height: 15px;
+                margin-bottom: -1.5px;
+            }
+        }
+
+
+        & .img-wrap {
+            position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+            margin-bottom: 30px;
+
+            & img:first-child {
+                border-radius: 30px;
+            }
+
+            & .insights_link {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                z-index: 3;
+                width: 56px;
+                height: 56px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                background: #0a0d50;
+                transition: all 0.3s linear;
+
+                &:hover{
+                    transform: rotate(45deg);
+                }
+            }
+
+            & .swiper_insights_mask {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                z-index: 1;
+                width: 95px;
+                height: 95px;
+            }
+
+        }
+
+        & .project_title_h4 {
+            margin-bottom: 20px;
+        }
+
+        & p {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 160%;
+            color: #878c91;
+        }
+    }
+}

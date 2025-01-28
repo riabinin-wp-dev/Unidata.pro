@@ -1,0 +1,69 @@
+.pathologies {
+    & .grid-row {
+        gap: 60px;
+        grid-template-columns: 510px 1fr;
+        align-items: center;
+
+        @media (max-width:1250px) {
+            grid-template-columns: 400px 1fr;
+        }
+
+        @include tablet {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    & .pathologies_item {
+        & .project_title_h3 {
+            margin-bottom: 40px;
+            color: #0a0d50;
+
+            @include tablet{
+                margin-bottom: 20px;
+            }
+        }
+
+        & .pathology_item_list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+    }
+
+    & .pathologies_item_part+.pathologies_item_part {
+        margin-top: 60px;
+
+        @include tablet{
+            margin-top: 30px;
+        }
+    }
+
+    & .pathologies_item:last-child {
+        @include tablet {
+            order: -1;
+        }
+    }
+    & .pathologies_item:first-child {
+        @include tablet {
+            max-width: 550px;
+        }
+    }
+}
+
+.pathology_item_list li {
+    font-weight: 400;
+    font-size: clamp(16px, 3.5vw, 20px);
+    line-height: 200%;
+    text-align: center;
+    color: #0a0d50;
+    padding: 8px 24px;
+    border-radius: 40px;
+    background: #f3f5fc;
+
+    @include mobile{
+        text-align: center;
+        flex-grow: 1;
+        flex-shrink: unset;
+        padding: 6px 15px;
+    }
+}

@@ -1,0 +1,92 @@
+.experience{
+    & .experience__inner{
+        padding: 80px;
+        border-radius: 30px;
+        @include bg-cover;
+
+        @include for-desktop{
+            padding: 40px 0;
+        }
+    }
+
+    & .project_title{
+        text-align: center;
+        color: white;
+        margin-bottom: 10px;
+        max-width: 866px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    & .grid-row{
+        padding: 40px 80px;
+        border-bottom: 1px solid #e1e1e1;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 20px;
+        align-items: center;
+
+        @include tablet{
+            padding: 20px 30px;
+        }
+
+        @include small-tablet{
+            gap: 10px;
+        }
+
+        & .project_title_h3{
+            grid-column: 4 span;
+
+            @include mobile{
+                grid-column: 10 span;
+            }
+        }
+
+        & .project_text_regular{
+            color: #fafafa;
+            grid-column: 6 span;
+
+            @include mobile{
+                grid-column: 10 span;
+                grid-row: 2;
+            }
+        }
+
+        & .expirience_inner_more{
+            grid-column: 2 span;
+            width: 64px;
+            height: 64px;
+            background-color: #f7f6f9;
+            display: flex;
+            border-radius: 50%;
+            overflow: hidden;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+
+            @include small-tablet{
+                width: 48px;
+                height: 48px;
+            }
+
+            @include mobile{
+                grid-row: 2 span;
+            }
+
+            & svg{
+                stroke: #292D32;
+                transition: all 0.3s linear;
+            }
+            &:hover{
+                & svg{
+                    stroke: #292D32;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+
+    & .project-modal{
+        margin: 50px auto 0;
+    }
+}

@@ -1,0 +1,280 @@
+.page {
+    overflow: unset;
+}
+
+.content {
+    &:has(.content_left.active){
+        .content_left_mobile{
+            right: -100% !important;
+        }
+    }
+ 
+    &.section {
+        margin-top: 60px;
+    }
+
+    & .container {
+        display: grid;
+        gap: 25px;
+        grid-template-columns: 250px 1fr 282px;
+
+        @include for-desktop {
+            grid-template-columns: 250px 1fr;
+        }
+
+        @include small-tablet {
+            position: relative;
+        }
+    }
+
+    & .content_left {
+        transform-origin: 100% 100%;
+
+        @include small-tablet {
+            position: fixed;
+            background-color: white;
+            max-width: 250px;
+            padding: 30px;
+            padding-left: 0;
+            right: 0;
+            transform: translateY(-50%) rotateY(-90deg);
+            transition: all 0.3s linear;
+            top: 50%;
+
+            @include mobile{
+                padding: 12px;
+                max-width: 200px;
+            }
+            
+            & .project_title_h4{
+                padding: 10px;
+
+                @include mobile{
+                    padding: 0;
+                }
+            }
+            
+            &.active {
+                transform: rotateY(0) translateY(-50%);
+                border-radius: 20px 0 0 20px ;
+                border: 1px solid rgba(17, 27, 79, 0.3);
+            }
+        }
+
+        & .close{
+            display: none;
+
+            @include small-tablet{
+                display: block;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                color: #878c91;
+                cursor: pointer;
+            }
+        }
+    }
+
+    & .content_left_mobile {
+        display: none;
+
+        @include small-tablet {
+            display: block;
+            position: fixed;
+            writing-mode: vertical-lr;
+            text-orientation: mixed;
+            cursor: pointer;
+            top: 50%;
+            right: 0;
+            // left: 0;
+            left: unset;
+            background-color: white;
+            backdrop-filter: blur(10px);
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 140%;
+            color: #111b4f;
+            padding: 10px;
+            // padding-right: 5px;
+            border-radius:  20px 0 0 20px;
+            border: 1px solid rgba(17, 27, 79, 0.3);
+            // margin: 0;
+            // transform-origin: left top;
+            transform: translateY(-50%);
+        }
+    }
+
+
+    & .content_right {
+
+        @include for-desktop {
+            display: none;
+        }
+
+        & .content_right_wrapper {
+            padding: 32px;
+            padding-bottom: 36px;
+            border-radius: 10px;
+            @include bg-cover;
+            position: sticky;
+            top: 70px;
+        }
+
+        & .project_title_h4 {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        & .project-modal {
+            background-color: transparent;
+            border-color: #fff;
+            margin-left: auto;
+            margin-right: auto;
+
+            &:hover {
+                background-color: #fff;
+            }
+        }
+    }
+
+
+    & .content_left_wrapper {
+        position: sticky;
+        top: 70px;
+    }
+
+    & .content_left_wrapper_menu {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+
+        @include mobile{
+            gap: 5px;
+            padding-left: 25px;
+            margin-bottom: 0;
+        }
+
+        & .project_title_h4 {
+            margin-bottom: 24px;
+        }
+
+
+        & a {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 120%;
+            letter-spacing: 0.05em;
+            color: rgba(10, 13, 80, 0.6);
+            transition: all 0.3s linear;
+
+            @include mobile{
+                font-size: 10px;
+                line-height: 1.1;
+            }
+        }
+        
+        & li {
+            transition: all 0.3s linear;
+            
+            @include mobile{
+                line-height: 1;
+            }
+            
+            &::marker {
+                color: rgba(10, 13, 80, 0.6);
+                font-size: 25px;
+                @include mobile{
+                    font-size: 18px;
+                }
+            }
+        }
+        & li.active {
+            &::marker{
+                color: #0a0d50;
+            }
+        }
+
+        & li.active a {
+            color: #0a0d50;
+        }
+    }
+
+    & .content_inner {
+
+        @include small-tablet {
+            grid-column: 2 span;
+        }
+
+        & p {
+            font-weight: 500;
+            font-size: clamp(14px, 3vw, 18px);
+            line-height: 180%;
+            color: #192031;
+
+            @include tablet {
+                font-size: 14px;
+            }
+        }
+
+        & img {
+            border-radius: 16px;
+        }
+
+        & blockquote {
+            border: 1px solid #0a0d50;
+            border-radius: 16px;
+            background-color: #fff;
+            padding: 25px;
+            line-height: 1.5;
+            margin-left: 0;
+            margin-right: 0;
+            font-size: clamp(14px, 3vw, 18px);
+            color: #192031;
+        }
+
+        & ul,
+        & ol {
+            font-weight: 500;
+            font-size: clamp(14px, 3vw, 18px);
+            line-height: 178%;
+            color: #192031;
+            margin-top: 25px;
+            margin-bottom: 25px;
+
+
+            & li:not(:last-child) {
+                margin-bottom: 10px;
+            }
+        }
+
+        & table {
+            border-collapse: collapse;
+            width: 100%;
+            table-layout: fixed !important;
+
+            & thead th,
+            & tbody tr td:first-child {
+                background: #f0f0f0;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                font-weight: 600;
+                font-size: clamp(12px, 3vw, 14px);
+                text-align: center;
+                color: #000;
+            }
+
+
+            & th,
+            & td {
+                border: 0.5px solid rgba(0, 0, 0, 0.5);
+                padding: 5px;
+                font-size: clamp(10px, 3vw, 16px);
+
+                @include tablet {
+                    word-break: break-word;
+                }
+            }
+        }
+    }
+}

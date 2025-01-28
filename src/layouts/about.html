@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    {{> head }}
+</head>
+
+<body>
+    <!-- <object type="image/svg+xml" data="./assets/images/sprite.svg" style="display: none;"></object> -->
+
+    <div class="page">
+        {{> header }}
+
+        <main class="main">
+            {{> body }}
+        </main>
+        {{> footer }}
+        <div class="overlay"></div>
+    </div>
+    <!-- <script src="assets/js/app.js"></script> -->
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const burgerMenu = document.querySelector('.burger-menu');
+            const mobileMenu = document.querySelector('.mobile_menu');
+            if (burgerMenu && mobileMenu) {
+                burgerMenu.addEventListener('click', () => {
+                    burgerMenu.classList.toggle('open');
+                    mobileMenu.classList.toggle('active');
+                });
+            }
+
+        });
+
+        const swiperBlockquote = new Swiper('.swiper-blockquote', {
+            slidesPerView: 1,
+            spaceBetween: 15,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'fraction',
+                formatFractionCurrent: (number) => `0${number}`, // Формат текущего слайда с ведущим нулем
+                formatFractionTotal: (number) => `0${number}`, // Формат общего количества слайдов с ведущим нулем
+            },
+        });
+        function updateConnectors() {
+            if (window.innerWidth > 1320) {
+                const itemPairs = [
+                    ['item2', 'item3'],
+                    ['item4', 'item5'],
+                ];
+                const connectors = document.querySelectorAll('.connector');
+
+                let maxHeight = 0;
+
+                // Вычисляем высоту для каждой пары и находим максимальную
+                itemPairs.forEach(([id1, id2]) => {
+                    const item1 = document.getElementById(id1);
+                    const item2 = document.getElementById(id2);
+
+                    if (item1 && item2) {
+                        const item1Rect = item1.getBoundingClientRect();
+                        const item2Rect = item2.getBoundingClientRect();
+
+                        const item1CenterY = item1Rect.top + item1Rect.height / 2;
+                        const item2CenterY = item2Rect.top + item2Rect.height / 2;
+
+                        const height = Math.abs(item2CenterY - item1CenterY);
+
+                        if (height > maxHeight) {
+                            maxHeight = height;
+                        }
+                    }
+                });
+
+                // Применяем максимальную высоту ко всем соединителям
+                connectors.forEach((connector) => {
+                    connector.style.height = `${maxHeight}px`;
+                });
+            }
+        }
+
+        // Обновляем при загрузке и изменении размера окна
+        window.addEventListener('load', updateConnectors);
+        window.addEventListener('resize', updateConnectors);
+
+
+    </script>
+</body>
+
+</html>

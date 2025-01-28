@@ -1,0 +1,103 @@
+   .newsletter {
+       & .project_title {
+           font-weight: 700;
+           margin-bottom: 16px;
+
+           @include mobile{
+            text-align: center;
+           }
+       }
+
+       & .project_desc_grey {
+           color: #263238;
+           max-width: 800px;
+
+           @include mobile{
+            text-align: center;
+           }
+       }
+
+       & .flex-row {
+           justify-content: space-between;
+           gap: 20px;
+
+           @include mobile{
+            flex-direction: column;
+           }
+       }
+
+       & .flex-column:last-child {
+           width: 100%;
+           max-width: 419px;
+
+           @include tablet{
+            max-width: 250px;
+           }
+
+           @include mobile{
+            max-width: none;
+           }
+       }
+
+       & .flex-column form {
+           display: flex;
+           flex-direction: column;
+           gap: 16px;
+
+           @include mobile{
+            gap: 8px;
+           }
+
+           & input {
+               display: block;
+           }
+       }
+
+       & .newsletter_input {
+           border: 1px solid rgba(0, 0, 0, 0.5);
+           border-radius: 6px;
+           padding: 12px 16px;
+           width: 100%;
+           max-width: 419px;
+           text-align: center;
+           font-weight: 400;
+           font-size: 16px;
+           line-height: 162%;
+
+           @include tablet{
+            max-width: 250px;
+           }
+
+           @include mobile{
+            max-width: none;
+            font-size: 14px;
+           }
+
+           &::placeholder {
+               color: #878c91;
+           }
+       }
+
+       & .newsletter_submit {
+           border-radius: 6px;
+           padding: 16px 24px;
+           width: 100%;
+           max-width: 419px;
+           background: #0a0d50;
+           font-weight: 700;
+           font-size: 16px;
+           text-transform: capitalize;
+           text-align: justify;
+           color: #fff;
+           text-align: center;
+
+           @include tablet{
+            max-width: 250px;
+           }
+
+           @include mobile{
+            max-width: none;
+            font-size: 14px;
+           }
+       }
+   }

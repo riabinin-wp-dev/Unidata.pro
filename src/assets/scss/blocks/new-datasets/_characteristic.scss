@@ -1,0 +1,20 @@
+.characteristic {
+    & .project_title {
+        line-height: 96%;
+        margin-bottom: var(--mbtitle);
+    }
+}
+
+.charakteristic_info {
+    display: block;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 155%;
+    text-align: center;
+    color: #0a0d50;
+    margin-top: 32px;
+
+    @include mobile{
+        font-size: 16px;
+    }
+}

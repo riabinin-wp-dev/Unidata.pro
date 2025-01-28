@@ -1,0 +1,32 @@
+:root {
+  // base
+  --font-family: "Plus Jakarta Sans", sans-serif;
+  --second-family: "Roboto", sans-serif;
+  --third-family: "Manrope", sans-serif;
+  --font3: "MuseoModerno", sans-serif;
+  --font4: "Inter", sans-serif;
+  --font5: "Jost", sans-serif;
+  --font6: "Mulish", sans-serif;
+
+  --content-width: 1510px;
+  --content-fluid-width: 1690px;
+  --container-offset: 30px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+  --container-fluid-width: calc(var(--content-fluid-width) + (var(--container-offset) * 2));
+
+  // colors
+  --light-color: #fff;
+  --accent-color: #0a0d50;
+  --accent-second: #66fcf0;
+  --dark-color: #141024;
+  --text-color: #404040;
+  --button-hover: #3a4659;
+
+  --mbtitle: 48px;
+}
+
+@media (max-width: 992px){
+  :root{
+    --mbtitle: 32px;
+  } 
+}

@@ -1,0 +1,54 @@
+.statistics {
+    & .project_title {
+        margin-bottom: 50px;
+    }
+
+    & .grid-row {
+        grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+        gap: 40px;
+        row-gap: 20px;
+        
+        @media (max-width:1200px){
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 20px;
+        }
+        
+        @include tablet{
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+
+        & dl {
+            border-radius: 16px;
+            overflow: hidden;
+
+            & dt {
+                background-color: white;
+
+                & img {
+                    object-fit: contain;
+                }
+            }
+
+            & dd {
+                background: #0a0d50;
+                padding: 30px 45px;
+
+                @include tablet{
+                    padding: 15px 20px;
+                }
+
+                & span {
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 178%;
+                    color: #fff;
+
+                    @include tablet{
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,164 @@
+.info {
+    & .project_title {
+        margin-bottom: var(--mbtitle);
+    }
+}
+
+.info_inner_table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid rgba(10, 13, 80, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    flex: 1 0 calc(50% - 15px);
+
+    & thead td {
+        padding-top: 24px;
+        padding-bottom: 16px;
+
+        @include tablet{
+            padding-top: 16px;
+        }
+    }
+}
+
+.info_inner_table th,
+.info_inner_table td {
+    padding: 8px 16px;
+    text-align: left;
+    border-bottom: 1px solid rgba(10, 13, 80, 0.1);
+    width: 50%;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #0a0d50;
+
+    @include tablet{
+        padding: 4px 16px 8px 16px;
+    }
+}
+
+.info_inner_table tbody tr:last-child td {
+    border-bottom: none;
+    padding-bottom: 24px;
+
+    @include tablet{
+        padding-bottom: 16px;
+    }
+}
+
+.info_inner_table thead td {
+    background: rgba(10, 13, 80, 0.03);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 140%;
+    color: #0a0d50;
+}
+
+.info_inner_table tbody tr:nth-child(even) {
+    background: rgba(10, 13, 80, 0.03);
+}
+
+.info_inner_table tbody tr:nth-child(odd) {
+    background: transparent;
+}
+
+.info_inner {
+    display: flex;
+    gap: 30px;
+
+    @media (max-width: 1250px){
+        flex-direction: column;
+    }
+}
+
+.info_inner_slider {
+    flex: 1 0 calc(50% - 15px);
+    border-radius: 16px;
+    @include bg-cover;
+    padding: 32px 32px 24px 32px;
+    min-width: 0;
+}
+.swiper-info{
+    & img{
+        border-radius: 16px;
+
+        @media (max-width: 1440px){
+            height: calc(450 / 14.4 * 1vw);
+        }
+        @media (max-width: 1250px){
+            height: auto;
+        }
+    }
+}
+.swiper_arrows{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    margin-top: 24px;
+
+    .info-pagination{
+        display: none;
+
+        @include tablet{
+            display: flex;
+            justify-content: center;
+        }
+
+        & .swiper-pagination-bullet{
+            background-color: rgba($color: #fff, $alpha: 0.9);
+        }
+        & .swiper-pagination-bullet-active{
+            background-color: #fff;
+        }
+    }
+
+    & *{
+        display: block;
+    }
+
+    & .swiper-button-next, & .swiper-button-prev{
+        position: static;
+        display: block;
+        padding: 12px 24px;
+        border-radius: 70px;
+        border: 1px solid #fff;
+        width: 100%;
+        height: auto;
+        max-width: max-content;
+        margin-top: 0;
+        transition: all 0.3s linear;
+
+        @include tablet{
+            display: none;
+        }
+
+        @media (hover: hover){
+            &:hover{
+                background: #fff;
+                & svg{
+                    stroke: #0a0d50;
+                }
+            }
+        }
+
+        &::after{
+            display: none;
+        }
+
+        & svg{
+            display: block;
+            stroke: white;
+            width: 24px;
+            height: 24px;
+            transition: all;
+
+            & path{
+                transition: all 0.3s linear;
+            }
+        }
+    }
+}

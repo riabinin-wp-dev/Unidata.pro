@@ -1,0 +1,63 @@
+.accordion {
+    // border: 1px solid #ccc;
+    // border-radius: 4px;
+}
+
+.accordion-item {
+    // border-bottom: 1px solid #ccc;
+    background: #fff;
+    border-bottom: 1px solid #000;
+    padding: 26px 24px;
+
+    @include small-tablet{
+        padding: 20px 0;
+    }
+
+    &:first-child{
+        border-top: 1px solid #000;
+    }
+}
+
+
+.accordion-header {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    padding: 0;
+}
+
+.accordion-content p {
+    margin: 15px 0;
+}
+
+.accordion-header .icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 700;
+    font-size: 35px;
+    transition: all 0.3s linear;
+
+    @include small-tablet{
+        font-size: 27px;
+        font-weight: 500;
+    }
+}
+
+.faq {
+    & .grid-row {
+        grid-template-columns: auto 1fr;
+        gap: clamp(30px, 4.5vw, 90px);
+
+        @include tablet{
+            grid-template-columns: 1fr;
+        }
+    }
+}

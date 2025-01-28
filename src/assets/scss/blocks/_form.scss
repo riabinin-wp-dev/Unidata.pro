@@ -1,0 +1,233 @@
+.form {
+    & .container {
+        &>.grid-row {
+            gap: 40px;
+            border-radius: 30px;
+            @include bg-cover;
+            padding: 0 50px;
+            grid-template-columns: minmax(350px, 507px) minmax(350px, 1fr);
+
+            @include medium-desktop {
+                grid-template-columns: minmax(350px, 407px) minmax(350px, 1fr);
+            }
+            
+            @include for-desktop{
+                grid-template-columns: minmax(270px, 407px) minmax(350px, 1fr);
+                padding: 0px 30px;
+            }
+
+            @include tablet{
+                grid-template-columns: 1fr;
+                position: relative;
+            }
+
+            @include mobile{
+                padding: 0 15px;
+            }
+
+            & .img-wrap {
+                display: flex;
+                align-items: flex-end;
+
+                @include tablet{
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    top: 20%;
+                    z-index: 0;
+
+                    & img{
+                        max-height: 100%;
+                        max-width: 100%;
+                        object-fit: contain;
+                        opacity: 0.4;
+                        filter: blur(4px);
+                    }
+                }
+            }
+        }
+
+        & .flex-column {
+            margin-top: 80px;
+            margin-bottom: 80px;
+
+            @include tablet{
+                align-items: flex-start;
+                width: 100%;
+                margin: 40px 0;
+            }
+
+            & .project_title {
+                color: white;
+                margin-bottom: 65px;
+
+                @include medium-desktop{
+                    margin-bottom: 30px;
+                }
+
+            }
+
+            & form {
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+                max-width: 660px;
+
+                @include medium-desktop{
+                    gap: 20px;
+                }
+
+                @include tablet{
+                    max-width: none;
+                    width: 100%;
+                }
+
+                & .flex-row {
+                    gap: 20px;
+
+                    @include medium-desktop{
+                        gap: 15px;
+                    }
+
+                    @include mobile{
+                        flex-direction: column;
+                    }
+
+                    & span {
+                        display: block;
+                        width: 100%;
+                    }
+
+                    & select {
+                        font-family: var(--second-family);
+                        font-weight: 400;
+                        font-size: clamp(14px, 1.5vw, 16px);
+                        line-height: 130%;
+                        color: rgba(255, 255, 255, 0.8);
+                        display: block;
+                        width: 100%;
+                        // color: rgb(255, 255, 255);
+                        padding: 17.5px 16px;
+                        border: 1px solid rgba(23, 34, 36, 0.2);
+                        border-radius: 8px;
+                        backdrop-filter: blur(20px);
+                        box-shadow: 0 1px 2px 0 rgba(23, 17, 35, 0.05);
+                        background: rgba(255, 255, 255, 0.4);
+                        appearance: none; // Убираем стандартный стиль стрелки
+                        -webkit-appearance: none; // Для Safari
+                        -moz-appearance: none; // Для Firefox
+                        background-image: url('data:image/svg+xml,%3Csvg%20width=%2224%22%20height=%2224%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%20%20%20%3Cpath%20d=%22M12%2016.5L4.5%208.99995L5.55%207.94995L12%2014.4L18.45%207.94995L19.5%208.99995L12%2016.5Z%22%20fill=%22white%22%20/%3E%20%3C/svg%3E');
+                        background-repeat: no-repeat;
+                        background-position: calc(100% - 17px) center; // Отступ справа 17px, центрирование по высоте
+
+                        &:focus,
+                        &:active {
+                            outline: none;
+                        }
+
+                        & option {
+                            color: black;
+                            font-size: 18px;
+
+                            @include mobile{
+                                font-size: 14px;
+                            }
+                        }
+                    }
+
+                    & input {
+                        display: block;
+                        width: 100%;
+                        border: 1px solid rgba(23, 34, 36, 0.2);
+                        border-radius: 8px;
+                        padding: 0px 8px 0px 16px;
+                        backdrop-filter: blur(4px);
+                        background: rgba(255, 255, 255, 0.4);
+                        font-family: var(--second-family);
+                        font-weight: 400;
+                        font-size: clamp(14px, 1.5vw, 16px);
+                        line-height: 130%;
+                        color: rgb(255, 255, 255);
+                        padding: 17.5px 16px;
+
+                        &::placeholder {
+                            font-family: var(--second-family);
+                            font-weight: 400;
+                            font-size: clamp(14px, 1.5vw, 16px);
+                            line-height: 130%;
+                            color: rgba(255, 255, 255, 0.8);
+                        }
+
+                        &:focus,
+                        &:active {
+                            outline: none;
+                        }
+                    }
+
+                }
+
+                & textarea {
+                    width: 100%;
+                    display: block;
+                    border: 1px solid rgba(23, 34, 36, 0.2);
+                    border-radius: 8px;
+                    padding: 0px 12px 8px 16px;
+                    width: 100%;
+                    height: 136px;
+                    backdrop-filter: blur(20px);
+                    box-shadow: 0 1px 2px 0 rgba(23, 17, 35, 0.05);
+                    background: rgba(255, 255, 255, 0.4);
+                    padding: 16px;
+                    font-family: var(--third-family);
+                    font-weight: 500;
+                    font-size: clamp(13px, 1.5vw, 15px);
+                    line-height: 160%;
+                    color: rgba(255, 255, 255, 0.8);
+
+                    &::placeholder {
+                        font-family: var(--third-family);
+                        font-weight: 500;
+                        font-size: clamp(13px, 1.5vw, 15px);
+                        line-height: 160%;
+                        color: rgba(255, 255, 255, 0.8);
+                    }
+
+                    &:focus,
+                    &:active {
+                        outline: none;
+                    }
+                }
+
+                & .form_submit {
+                    position: relative;
+                    z-index: 0;
+                    background-color: white;
+                    border-radius: 70px;
+
+
+                    &::after {
+                        display: block;
+                        position: absolute;
+                        right: 32px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        z-index: 0;
+                        content: "";
+                        width: 24px;
+                        height: 24px;
+                        background-image: url('data:image/svg+xml,%3Csvg%20width=%2224%22%20height=%2224%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%20%20%20%3Cpath%20d=%22M5%2012H19%22%20stroke=%22#0A0D50%22%20stroke-width=%222%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%20/%3E%20%20%20%3Cpath%20d=%22M12%205L19%2012L12%2019%22%20stroke=%22#0A0D50%22%20stroke-width=%222%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%20/%3E%20%3C/svg%3E');
+                    }
+                }
+
+                & .project-modal {
+                    cursor: pointer;
+                    padding-right: 80px;
+                    position: relative;
+                    z-index: 1;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}

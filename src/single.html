@@ -1,0 +1,236 @@
+---
+layout: single
+title: Unidata.pro
+---
+
+<section class="sinhero section">
+    <div class="container">
+        <div class="sinhero_inner">
+            <h1 class="project_title">Training, validation, and test datasets. What is the difference?</h1>
+            <time datetime="">12, MAY 2024</time>
+            <ul class="sinhero_inner_cat list-reset">
+                <li><a href="">Tools</a></li>
+                <li><a href="">Сases</a></li>
+                <li><a href="">Datasets</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="content section">
+    <div class="container">
+        <button id="toggleMenu" class="btn-reset content_left_mobile">Table of content</button>
+        <aside class="content_left">
+            <div class="content_left_wrapper">
+                <h4 class="project_title_h4">Table of content</h4>
+                <ul class="content_left_wrapper_menu">
+                    <li class="active"><a href="">Comparing training, validation, and test sets</a></li>
+                    <li><a href="">Validation data </a></li>
+                    <li><a href="">Test data </a></li>
+                    <li><a href="">Data Splitting</a></li>
+                    <li><a href="">Conclusion</a></li>
+                </ul>
+            </div>
+            <span id="close" class="close">&times;</span>
+        </aside>
+        <div class="content_inner">
+            <h2>Comparing training, validation, and test sets</h2>
+            <p>Let’s overview the differences between training, validation, and test sets. All of these datasets have
+                their own distinctive roles in the life cycle of a machine learning model.</p>
+            <ol>
+                <li><b>The training set is primarily employed in the initial training phase</b> – it’s used to teach the
+                    model patterns and behaviors embedded in the dataset.</li>
+                <li><b>In contrast, the validation set helps fine</b> -tune the model after the initial training phase
+                    by adjusting hyperparameters, detecting and correcting overfitting issues during training.</li>
+                <li><b>Finally, the test set is reserved for the final stage of the ML process:</b> it helps evaluate
+                    how well the model performs in real-world scenarios by providing an unbiased assessment of its
+                    generalization capabilities in terms of new data.</li>
+            </ol>
+            <p>
+                While these sets have their differences, they also share some common points, especially regarding the
+                indispensable role they all play throughout the machine learning process. All three sets are usually
+                extracted from a single initial dataset via data splitting. <br>
+                Training, validation, and test sets are essential for developing, refining, and assessing the model to
+                ensure effective learning, correct generalization, and consistent performance across unseen situations.
+                Maintaining the integrity and coherence of these datasets is critical as they collectively contribute to
+                creating a well-rounded machine learning model.
+            </p>
+            <h3>Comparing training, validation, and test sets</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Aspect</th>
+                        <th>Training Data</th>
+                        <th>Validation Data</th>
+                        <th>Test Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Purpose</td>
+                        <td>Used to train the model, allowing it to learn and adapt to the data</td>
+                        <td>Used to tune hyperparameters and avoid overfitting by providing an unbiased evaluation of
+                            the model during training</td>
+                        <td>Used to assess the final performance of the model after training and validation, providing
+                            an unbiased assessment of its predictive power in real-world scenarios</td>
+                    </tr>
+                    <tr>
+                        <td>Timing of Use</td>
+                        <td>Used throughout the initial phase of the machine learning pipeline</td>
+                        <td>Used after the model has been initially trained on the training data</td>
+                        <td>Used after the model has been trained and validated, at the very end of the machine learning
+                            process</td>
+                    </tr>
+                    <tr>
+                        <td>Characteristics</td>
+                        <td>Should represent the full spectrum of data and scenarios the model will encounter</td>
+                        <td>Should be representative of the dataset to validate the model’s ability to generalize</td>
+                        <td>Representative of real-world data the model will encounter post-deployment to accurately
+                            assess its performance</td>
+                    </tr>
+                </tbody>
+            </table>
+            <ul>
+                <li>The training set is primarily employed in the initial training phase </li>
+                <li>In contrast, the validation set helps fine</li>
+                <li>Finally, the test set is reserved for the final stage of the ML process</li>
+            </ul>
+            <blockquote>
+                While these sets have their differences, they also share some common points, especially regarding the
+                indispensable role they all play throughout the machine learning process. All three sets are usually
+                extracted from a single initial dataset via data splitting. <br>
+                Training, validation, and test sets are essential for developing, refining, and assessing the model to
+                ensure effective learning, correct generalization, and consistent performance across unseen situations.
+                Maintaining the integrity and coherence of these datasets is critical as they collectively contribute to
+                creating a well-rounded machine learning model.
+            </blockquote>
+        </div>
+        <aside class="content_right">
+            <div class="content_right_wrapper" style="background-image: url('./assets/images/single/work.png');">
+                <h4 class="project_title_h4">Let’s work together</h4>
+                <a href="" class="project-modal  width-over">Get started</a>
+            </div>
+        </aside>
+    </div>
+</section>
+
+
+<section class="section insights">
+    <div class="container">
+        <h2 class="project_title">Insights into the Digital World</h2>
+        <div class="swiper_container">
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev slider_arrows">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 12H5" stroke="#0A0D50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M12 5L5 12L12 19" stroke="#0A0D50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+            </div>
+            <div class="swiper-button-next slider_arrows">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 12L19 12" stroke="#0A0D50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M12 19L19 12L12 5" stroke="#0A0D50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+            </div>
+            <!-- Slider main container -->
+            <div class="swiper swiper_insights">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <div class="img-wrap">
+                            <img src="./assets/images/blog/intro.png" alt="" width="376" height="283">
+                            <a href="" class="insights_link">
+                                <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M11.2497 3.88318C10.8355 3.88318 10.4997 4.21897 10.4997 4.63318C10.4997 5.04739 10.8355 5.38318 11.2497 5.38318H18.9188L3.71905 20.583C3.42047 20.8815 3.42047 21.3656 3.71905 21.6642C4.01762 21.9628 4.50171 21.9628 4.80028 21.6642L19.9997 6.46476V14.1332C19.9997 14.5474 20.3355 14.8832 20.7497 14.8832C21.1639 14.8832 21.4997 14.5474 21.4997 14.1332V4.63318C21.4997 4.21897 21.1639 3.88318 20.7497 3.88318H11.2497Z"
+                                        fill="#FFFDFB" />
+                                </svg>
+                            </a>
+                            <img class="swiper_insights_mask" src="./assets/images/single/div.btn-circle-wrapper.svg" alt="">
+                        </div>
+                        <h4 class="project_title_h4">Training, validation, and test datasets. What is the difference?
+                        </h4>
+                        <p>In the world of machine learning (ML) datasets play a fundamental role in building, training,
+                            and validating models. These data collections are not just assortments of information – they
+                            are carefully curated sets that fuel the algorithm learning process. Essentially, they serve
+                            as the foundation from which insights are derived, patterns are discerned, and predictions
+                            are generated.</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img-wrap">
+                            <img src="./assets/images/blog/intro.png" alt="" width="376" height="283">
+                            <a href="" class="insights_link">
+                                <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M11.2497 3.88318C10.8355 3.88318 10.4997 4.21897 10.4997 4.63318C10.4997 5.04739 10.8355 5.38318 11.2497 5.38318H18.9188L3.71905 20.583C3.42047 20.8815 3.42047 21.3656 3.71905 21.6642C4.01762 21.9628 4.50171 21.9628 4.80028 21.6642L19.9997 6.46476V14.1332C19.9997 14.5474 20.3355 14.8832 20.7497 14.8832C21.1639 14.8832 21.4997 14.5474 21.4997 14.1332V4.63318C21.4997 4.21897 21.1639 3.88318 20.7497 3.88318H11.2497Z"
+                                        fill="#FFFDFB" />
+                                </svg>
+                            </a>
+                            <img class="swiper_insights_mask" src="./assets/images/single/div.btn-circle-wrapper.svg" alt="">
+                        </div>
+                        <h4 class="project_title_h4">Training, validation, and test datasets. What is the difference?
+                        </h4>
+                        <p>In the world of machine learning (ML) datasets play a fundamental role in building, training,
+                            and validating models. These data collections are not just assortments of information – they
+                            are carefully curated sets that fuel the algorithm learning process. Essentially, they serve
+                            as the foundation from which insights are derived, patterns are discerned, and predictions
+                            are generated.</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img-wrap">
+                            <img src="./assets/images/blog/intro.png" alt="" width="376" height="283">
+                            <a href="" class="insights_link">
+                                <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M11.2497 3.88318C10.8355 3.88318 10.4997 4.21897 10.4997 4.63318C10.4997 5.04739 10.8355 5.38318 11.2497 5.38318H18.9188L3.71905 20.583C3.42047 20.8815 3.42047 21.3656 3.71905 21.6642C4.01762 21.9628 4.50171 21.9628 4.80028 21.6642L19.9997 6.46476V14.1332C19.9997 14.5474 20.3355 14.8832 20.7497 14.8832C21.1639 14.8832 21.4997 14.5474 21.4997 14.1332V4.63318C21.4997 4.21897 21.1639 3.88318 20.7497 3.88318H11.2497Z"
+                                        fill="#FFFDFB" />
+                                </svg>
+                            </a>
+                            <img class="swiper_insights_mask" src="./assets/images/single/div.btn-circle-wrapper.svg" alt="">
+                        </div>
+                        <h4 class="project_title_h4">Training, validation, and test datasets. What is the difference?
+                        </h4>
+                        <p>In the world of machine learning (ML) datasets play a fundamental role in building, training,
+                            and validating models. These data collections are not just assortments of information – they
+                            are carefully curated sets that fuel the algorithm learning process. Essentially, they serve
+                            as the foundation from which insights are derived, patterns are discerned, and predictions
+                            are generated.</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img-wrap">
+                            <img src="./assets/images/blog/intro.png" alt="" width="376" height="283">
+                            <a href="" class="insights_link">
+                                <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M11.2497 3.88318C10.8355 3.88318 10.4997 4.21897 10.4997 4.63318C10.4997 5.04739 10.8355 5.38318 11.2497 5.38318H18.9188L3.71905 20.583C3.42047 20.8815 3.42047 21.3656 3.71905 21.6642C4.01762 21.9628 4.50171 21.9628 4.80028 21.6642L19.9997 6.46476V14.1332C19.9997 14.5474 20.3355 14.8832 20.7497 14.8832C21.1639 14.8832 21.4997 14.5474 21.4997 14.1332V4.63318C21.4997 4.21897 21.1639 3.88318 20.7497 3.88318H11.2497Z"
+                                        fill="#FFFDFB" />
+                                </svg>
+                            </a>
+                            <img class="swiper_insights_mask" src="./assets/images/single/div.btn-circle-wrapper.svg" alt="">
+                        </div>
+                        <h4 class="project_title_h4">Training, validation, and test datasets. What is the difference?
+                        </h4>
+                        <p>In the world of machine learning (ML) datasets play a fundamental role in building, training,
+                            and validating models. These data collections are not just assortments of information – they
+                            are carefully curated sets that fuel the algorithm learning process. Essentially, they serve
+                            as the foundation from which insights are derived, patterns are discerned, and predictions
+                            are generated.</p>
+                    </div>
+      
+
+
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{{>form}}

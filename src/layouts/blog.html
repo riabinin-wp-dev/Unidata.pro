@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    {{> head }}
+</head>
+
+<body>
+    <!-- <object type="image/svg+xml" data="./assets/images/sprite.svg" style="display: none;"></object> -->
+
+    <div class="page" style="background-image: url(./assets/images/Background.webp);">
+        {{> header }}
+
+        <main class="main">
+            {{> body }}
+        </main>
+        {{> footer }}
+        <div class="overlay"></div>
+    </div>
+    <!-- <script src="assets/js/app.js"></script> -->
+    <script>
+        const updateLines = () => {
+            const articlesContainer = document.querySelector('article');
+            const posts = document.querySelectorAll('.blog_post');
+            const containerWidth = articlesContainer.clientWidth;
+            const postWidth = posts[0].clientWidth;
+            const gap = 28; // Adjust if needed
+
+            const postsPerRow = Math.round(containerWidth / (postWidth + gap));
+            // Remove all existing --line classes
+            posts.forEach(post => post.classList.remove('--line'));
+
+            // Add --line class to appropriate posts
+            posts.forEach((post, index) => {
+                if (index !== posts.length - 1 && (index + 1) % postsPerRow !== 0) {
+                    post.classList.add('--line');
+                }
+            });
+        };
+        document.addEventListener('DOMContentLoaded', () => {
+            updateLines();
+            window.addEventListener('resize', updateLines);
+        });
+        function toggleSidebar() {
+            const blogBottom = document.querySelector('.blog_bottom');
+            const sidebar = blogBottom.querySelector('aside');
+
+            if (sidebar) {
+                sidebar.classList.toggle('hidden');
+                setTimeout(() => {
+                    updateLines();
+                }, 400);
+            }
+        }
+
+    </script>
+</body>
+
+</html>

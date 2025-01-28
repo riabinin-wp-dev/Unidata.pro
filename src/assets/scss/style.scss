@@ -1,0 +1,150 @@
+// @import 'vendor/reset';
+@import 'blocks/vars';
+@import 'mixins';
+// @import "./vendor/animate";
+@import '../../../node_modules/swiper/swiper-bundle.min.css';
+
+@import 'fonts';
+@import 'settings';
+
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: auto;
+  color: #0a0d50;
+
+  & h1 {
+    font-size: clamp(34px, 5.5vw, 54px)
+  }
+
+  & h2 {
+    font-size: clamp(28px, 2vw, 32px)
+  }
+
+  & h3 {
+    font-size: clamp(24px, 2vw, 28px)
+  }
+
+  & h4 {
+    font-size: clamp(20px, 2vw, 24px)
+  }
+
+  & h5 {
+    font-size: clamp(16px, 2vw, 20px)
+  }
+}
+
+.main {
+  height: 100%;
+  flex: 1 0 auto;
+  transition: all 0.3s linear;
+}
+
+
+// ======blocks=========
+
+@import 'blocks/container';
+@import 'blocks/page';
+@import 'blocks/header';
+
+
+@import 'blocks/hero';
+@import 'blocks/scientists';
+@import 'blocks/experience';
+@import 'blocks/blockquote';
+@import 'blocks/successful';
+@import 'blocks/choose';
+@import 'blocks/form';
+
+@import 'blocks/dhero';
+@import 'blocks/datamarket';
+@import 'blocks/quality';
+@import 'blocks/choosen';
+@import 'blocks/choose';
+@import 'blocks/form';
+
+
+@import 'blocks/shero';
+@import 'blocks/quality';
+@import 'blocks/learning';
+@import 'blocks/types';
+@import 'blocks/deliver';
+@import 'blocks/cases';
+@import 'blocks/successful';
+@import 'blocks/form';
+
+
+@import 'blocks/dathero';
+@import 'blocks/datcases';
+@import 'blocks/isoimage';
+@import 'blocks/statistics';
+@import 'blocks/pathologies';
+@import 'blocks/faq';
+
+// @import 'blocks/blog/intro';
+@import 'blocks/blog/main';
+@import 'blocks/blog/blog';
+@import 'blocks/blog/newsletter';
+
+@import 'blocks/single/sinhero';
+@import 'blocks/single/content';
+@import 'blocks/single/insights';
+
+
+@import 'blocks/archive-cases/archive-cases';
+@import 'blocks/archive-cases/private';
+@import 'blocks/archive-cases/case';
+@import 'blocks/successful';
+
+@import 'blocks/single-cases/single-cases';
+@import 'blocks/single-cases/casesecond';
+
+@import 'blocks/archive-cases/archive-cases';
+@import 'blocks/about/stages';
+@import 'blocks/about/team';
+@import 'blocks/about/timeline';
+@import 'blocks/successful';
+@import 'blocks/choose';
+@import 'blocks/blockquote';
+@import 'blocks/form';
+
+@import 'blocks/archive-cases/archive-cases';
+@import 'blocks/quality';
+@import 'blocks/learning';
+@import 'blocks/about/stages';
+@import 'blocks/okk/necessary';
+@import 'blocks/deliver';
+@import 'blocks/form';
+
+@import 'blocks/hero';
+@import 'blocks/partner/partner';
+@import 'blocks/deliver';
+@import 'blocks/partner/partnership';
+@import 'blocks/cases';
+@import 'blocks/partner/startup';
+@import 'blocks/types';
+@import 'blocks/choose';
+@import 'blocks/form';
+
+@import 'blocks/delivergrid';
+
+
+@import 'blocks/footer';
+
+@import 'blocks/methods';
+@import 'blocks/stages';
+
+
+@import 'blocks/industry/industry';
+@import 'blocks/industry/ourindustries';
+
+//new datasets
+@import 'blocks/new-datasets/intro';
+@import 'blocks/new-datasets/info';
+@import 'blocks/new-datasets/statistic';
+@import 'blocks/new-datasets/characteristic';
+@import 'blocks/new-datasets/industries';

@@ -1,0 +1,55 @@
+.statistic {
+
+    & .project_title {
+        margin-bottom: var(--mbtitle);
+    }
+
+    & .grid-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+
+        @include tablet {
+            gap: 12px;
+        }
+
+        @include mobile {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    & dl {
+        box-shadow: 6px 12px 24px 0 rgba(0, 0, 0, 0.15);
+        background: #0a0d50;
+        border-radius: 16px;
+        background-color: var(--accent-color);
+        overflow: hidden;
+    }
+
+    & dt{
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 16px;
+        overflow: hidden;
+        
+        & img {
+            object-fit: contain;
+        }
+    }
+
+    & dd {
+        margin: 0;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 140%;
+        text-align: center;
+        color: #fff;
+        text-align: center;
+        padding: 20px 10px;
+
+        @include tablet{
+            padding: 12px 10px 16px;
+        }
+    }
+}

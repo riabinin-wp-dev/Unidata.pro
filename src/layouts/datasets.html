@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    {{> head }}
+</head>
+
+<body>
+    <!-- <object type="image/svg+xml" data="./assets/images/sprite.svg" style="display: none;"></object> -->
+
+    <div class="page">
+        {{> header }}
+
+        <main class="main">
+            {{> body }}
+        </main>
+        {{> footer }}
+        <div class="overlay"></div>
+    </div>
+    <!-- <script src="assets/js/app.js"></script> -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const burgerMenu = document.querySelector('.burger-menu');
+            const mobileMenu = document.querySelector('.mobile_menu');
+            if (burgerMenu && mobileMenu) {
+                burgerMenu.addEventListener('click', () => {
+                    burgerMenu.classList.toggle('open');
+                    mobileMenu.classList.toggle('active');
+                });
+            }
+            var swiper = new Swiper('.swiper_cases', {
+                slidesPerView: 7,
+                spaceBetween: 0, // Без отступов между слайдами
+                breakpoints: {
+                    // when window width is >= 320px
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 0
+                    },
+                    // when window width is >= 480px
+                    480: {
+                        slidesPerView: 2,
+                        spaceBetween: 0
+                    },
+                    // when window width is >= 640px
+                    640: {
+                        slidesPerView: 3,
+                        spaceBetween: 0
+                    },
+                    // when window width is >= 768px
+                    768: {
+                        slidesPerView: 4,
+                        spaceBetween: 0
+                    },
+                    // when window width is >= 1024px
+                    1024: {
+                        slidesPerView: 5,
+                        spaceBetween: 0
+                    },
+                    // when window width is >= 1200px
+                    1200: {
+                        slidesPerView: 6,
+                        spaceBetween: 0
+                    },
+                    // when window width is >= 1400px
+                    1400: {
+                        slidesPerView: 7,
+                        spaceBetween: 0
+                    }
+                },
+                // Optional parameters
+                loop: true,
+                // navigation: {
+                //     nextEl: '.swiper-button-next',
+                //     prevEl: '.swiper-button-prev',
+                // },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+        });
+
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function () {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.icon');
+
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        // content.style.padding = '0 15px';
+                        icon.textContent = '+';
+                    } else {
+                        // Close all open contents
+                        document.querySelectorAll('.accordion-content').forEach(item => {
+                            item.style.maxHeight = null;
+                            // item.style.padding = '0 15px';
+                        });
+
+                        // Reset all icons
+                        document.querySelectorAll('.accordion-header .icon').forEach(item => {
+                            item.textContent = '+';
+                        });
+
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        // content.style.padding = '15px';
+                        icon.textContent = '-';
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
