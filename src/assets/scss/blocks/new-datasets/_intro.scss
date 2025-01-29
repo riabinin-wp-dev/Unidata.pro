@@ -13,6 +13,9 @@
         align-items: flex-start;
         gap: 32px;
     }
+    @include tablet{
+        gap: 20px;
+    }
 
     @include small-tablet{
         align-items: center;
@@ -120,7 +123,7 @@
         text-align: center;
         color: #0a0d50;
         
-        @include tablet{
+        @media (max-width: 1100px){
             flex: 1 0 auto;
         }
         

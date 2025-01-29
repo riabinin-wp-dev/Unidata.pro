@@ -71,6 +71,10 @@
     @media (max-width: 1250px){
         flex-direction: column;
     }
+
+    @include tablet{
+        gap: 20px;
+    }
 }
 
 .info_inner_slider {
@@ -102,6 +106,7 @@
 
     .info-pagination{
         display: none;
+        position: static;
 
         @include tablet{
             display: flex;
